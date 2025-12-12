@@ -72,9 +72,6 @@ export const askToAssistant = async (req, res) => {
 
     const userName = user.name
     const assistantName = user.assistantName
-
-    console.log("Getting response from Gemini...");
-    
     const result = await geminiResponse(command, userName, assistantName)
     console.log("Gemini raw result:", result);
 

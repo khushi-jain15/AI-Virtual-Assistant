@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { userDataContext } from '../context/userContext';
+import { userDataContext } from '../context/UserContext';
 import axios from 'axios';
 
 function Signup() {
@@ -36,7 +36,7 @@ function Signup() {
   } catch (error) {
     console.log("ERROR:", error);
     setUserdata(null);
-    seterror(error.response.data.message);
+    seterror(error.response?.data?.message || "An error occurred");
     setLoading(false);
   }
 };
@@ -46,16 +46,17 @@ function Signup() {
 
   return (
     <div
-      className='w-full h-[100vh] flex items-center justify-end pr-[10%]'
+      className='w-full min-h-[100vh] flex items-center justify-center md:justify-end md:pr-[10%] py-8'
       style={{
         backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundColor: "#0a1628"
       }}
     >
-      <form className='w-[90%] h-[600px] max-w-[500px] bg-[#0000003c] backdrop-blur shadow-blue-950 flex flex-col items-center justify-center gap-[20px] px-[20px]' onSubmit={handleSignup}>
-        <h1 className='text-white text-[30px] font-semibold mb-[30px]'>Register to <span className='text-blue-400'>AI Virtual Assistant</span></h1>
+      <form className='w-[90%] h-auto min-h-[600px] max-w-[500px] bg-[#0000003c] backdrop-blur shadow-blue-950 flex flex-col items-center justify-center gap-[20px] px-[20px] py-8' onSubmit={handleSignup}>
+        <h1 className='text-white text-[24px] sm:text-[30px] font-semibold mb-[20px] sm:mb-[30px] text-center'>Register to <span className='text-blue-400'>AI Virtual Assistant</span></h1>
         <input type='text' placeholder='Enter your Name' className='w-full h-[60px] outline-none border-2 border-white bg-transparent text-white placeholder-gray-300 px-[20px] py-[30px] rounded-full text-[18px]' required onChange={(e)=>setName(e.target.value)} value={name}></input>
         <input type='email' placeholder='Enter your Email' className='w-full h-[60px] outline-none border-2 border-white bg-transparent text-white placeholder-gray-300 px-[20px] py-[30px] rounded-full text-[18px]' required onChange={(e)=>setEmail(e.target.value)} value={email}></input>
         <div className='w-full h-[60px] border-2 border-white bg-transparent text-white rounded-full text-[18px] relative '>
@@ -76,7 +77,7 @@ function Signup() {
           disabled={loading}>
             {loading? "Loading...." : "Sign Up"}
         </button>
-      <p className='text-[white] text-[18px] cursor-pointer'>Already have an account ? <span className='text-blue-700' onClick={() =>navigate("/signin")}>Sign in</span></p>
+      <p className='text-[white] text-[16px] sm:text-[18px] cursor-pointer text-center'>Already have an account ? <span className='text-blue-700' onClick={() =>navigate("/signin")}>Sign in</span></p>
       </form>
        
     </div>
