@@ -133,8 +133,14 @@ Backend runs on:
 
 ---
 
-## Like link 
-`https://ai-virtual-assistant-5b15.onrender.com`
+## Live link 
+🔹 Frontend (React App)
+
+👉 https://ai-virtual-assistant-5b15.onrender.com
+
+🔹 Backend (Node.js + Express API)
+
+👉 https://virtualassistant-backend-xwbz.onrender.com
 
 ## 🤝 Contributing
 
