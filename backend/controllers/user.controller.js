@@ -4,8 +4,6 @@ import geminiResponse from '../gemini.js'
 import moment from "moment";
 import { response } from "express";
 
-
-
 export const  getCurrentUser = async (req, res) =>{
     try {
         const userId = req.userId

@@ -9,33 +9,16 @@ import geminiResponse from './gemini.js';
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin: [
-        "https://ai-virtual-assistant-5b15.onrender.com",
-        "http://localhost:5173"
-    ],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: "https://ai-virtual-assistant-5b15.onrender.com",
+    credentials: true
 }));
+
 
 
 app.use(express.json());
  app.use(cookieParser());
 app.use("/api/auth",authRouter)
 app.use("/api/user",userRouter)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const port = process.env.PORT || 5000
 app.listen(port, () => {
