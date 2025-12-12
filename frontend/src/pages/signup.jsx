@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { userDataContext } from '../context/userContext';
+import { userDataContext } from '../context/UserContext';
 import axios from 'axios';
 
 function Signup() {
