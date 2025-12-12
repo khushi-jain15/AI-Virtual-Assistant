@@ -7,7 +7,7 @@ import image4 from "../assets/Avtar4.png"
 import image5 from "../assets/Avtar5.png"
 import image6 from "../assets/Avtar6.png"
 import { FaUpload } from "react-icons/fa";
-import { userDataContext } from '../context/userContext'
+import { userDataContext } from '../context/UserContext'
 import { useNavigate } from 'react-router-dom'
 import { FaArrowLeft } from "react-icons/fa";
 
