@@ -26,6 +26,7 @@ export const signUp = async (req ,res) =>{
             maxAge : 7*24*60*60*1000, // 7 days tokens 7days , 24hrs per day , 60 mins per hr, 60 sec per min , 1000 ms per sec
             sameSite: "lax",
             secure: true,
+            path: "/", 
 
         })
 
@@ -53,6 +54,7 @@ export const LogIn = async (req ,res) =>{
             httpOnly : true,
             sameSite: "lax",
             secure: true,
+            path: "/", 
         })
 
         res.status(200).json(user);
