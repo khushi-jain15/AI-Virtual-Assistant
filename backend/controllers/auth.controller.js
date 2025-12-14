@@ -25,7 +25,7 @@ export const signUp = async (req ,res) =>{
             httpOnly : true,
             maxAge : 7*24*60*60*1000, // 7 days tokens 7days , 24hrs per day , 60 mins per hr, 60 sec per min , 1000 ms per sec
             sameSite: "lax",
-            secure: true,
+            secure: false,
             path: "/", 
 
         })
@@ -53,7 +53,7 @@ export const LogIn = async (req ,res) =>{
         res.cookie("token" ,token ,{
             httpOnly : true,
             sameSite: "lax",
-            secure: true,
+            secure: false,
             path: "/", 
         })
 
